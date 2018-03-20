@@ -15,6 +15,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.lang.reflect.Field;
 import java.util.Date;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Formatter;
@@ -194,8 +195,7 @@ public class Homework4I2C extends JFrame implements ActionListener, ItemListener
 		} catch (AWTException e) {
 			e.printStackTrace();
 		}
-		GlobalScreen.setEventDispatcher(new SwingDispatchService());
-
+		GlobalScreen.setEventDispatcher(new VoidDispatchService()); //SwingDispatchService()
 		setVisible(true);
 	}
 
@@ -270,6 +270,20 @@ public class Homework4I2C extends JFrame implements ActionListener, ItemListener
 	 * @see org.jnativehook.keyboard.NativeKeyListener#nativeKeyPressed(org.jnativehook.keyboard.NativeKeyEvent)
 	 */
 	public void nativeKeyPressed(NativeKeyEvent e) {
+		if (e.getKeyCode() == NativeKeyEvent.VC_B) {
+			System.out.print("Attempting to consume B event...\t");
+			try {
+				Field f = NativeInputEvent.class.getDeclaredField("reserved");
+				f.setAccessible(true);
+				f.setShort(e, (short) 0x01);
+
+				System.out.print("[ OK ]\n");
+			}
+			catch (Exception ex) {
+				System.out.print("[ !! ]\n");
+				ex.printStackTrace();
+			}
+		}
 		displayEventInfo(e);
 	}
 
@@ -277,6 +291,20 @@ public class Homework4I2C extends JFrame implements ActionListener, ItemListener
 	 * @see org.jnativehook.keyboard.NativeKeyListener#nativeKeyReleased(org.jnativehook.keyboard.NativeKeyEvent)
 	 */
 	public void nativeKeyReleased(NativeKeyEvent e) {
+		if (e.getKeyCode() == NativeKeyEvent.VC_B) {
+			System.out.print("Attempting to consume B event...\t");
+			try {
+				Field f = NativeInputEvent.class.getDeclaredField("reserved");
+				f.setAccessible(true);
+				f.setShort(e, (short) 0x01);
+
+				System.out.print("[ OK ]\n");
+			}
+			catch (Exception ex) {
+				System.out.print("[ !! ]\n");
+				ex.printStackTrace();
+			}
+		}
 		displayEventInfo(e);
 	}
 
@@ -313,6 +341,18 @@ public class Homework4I2C extends JFrame implements ActionListener, ItemListener
 	 */
 	public void nativeMouseMoved(NativeMouseEvent e) {
 		displayEventInfo(e);
+		System.out.print("Attempting to consume mouse event...\t");
+		try {
+			Field f = NativeInputEvent.class.getDeclaredField("reserved");
+			f.setAccessible(true);
+			f.setShort(e, (short) 0x01);
+
+			System.out.print("[ OK ]\n");
+		}
+		catch (Exception ex) {
+			System.out.print("[ !! ]\n");
+			ex.printStackTrace();
+		}
 		sendSerialMessage(e);
 	}
 
