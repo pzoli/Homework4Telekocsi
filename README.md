@@ -2,7 +2,7 @@ This is the exprog.hu HoneyWeb and BeeComposit reference implementation project 
 
 I make an @Enity annotatons based database manager framework for easy and rapid administration program development that use Primefaces and its Extesions package.
 
-I can rapidly connect database structure creation with jsf GUI creation with dynamic forms, filterable and orderable tables from entity annotations.
+I can rapidly connect database structure creation with JSF GUI creation with dynamic forms, filterable and orderable tables from entity annotations.
 
 Additional I can make JSF GUIs with Velocity templates from annotated entities, so JSF can be dynamic and static generated for old codebase users, and I can generate any non JSF (like angular) GUIs. I'd like mixed JavaEE and Microprofile services with Keycloak. With this code I can easily help developers to migrate from old codebase to new designed codebase.
 
