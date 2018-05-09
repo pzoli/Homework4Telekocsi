@@ -4,7 +4,7 @@ I make an @Enity annotatons based database manager framework for easy and rapid 
 
 I can rapidly connect database structure creation with JSF GUI creation with dynamic forms, filterable and orderable tables from entity annotations.
 
-Additional I can make JSF GUIs with Velocity templates from annotated entities, so JSF can be dynamic and static generated for old codebase users, and I can generate any non JSF (like angular) GUIs. I'd like mixed JavaEE and Microprofile services with Keycloak. With this code I can easily help developers to migrate from old codebase to new designed codebase.
+Additional I can make JSF GUIs with Velocity templates from annotated entities, so JSF can be dynamic and static generated for old codebase users, and I can generate any non JSF (like angular) GUIs. I'd like make mixed JavaEE and Microprofile services with Keycloak. With this code I can easily help developers to migrate from old codebase to new designed codebase.
 
 HoneyWeb is the basic processor and GUI buildre tool for annotated entites.
 
@@ -42,3 +42,6 @@ Width 18 years development experience I found that the database manager systems 
 - @EditorInfo, @EditorFieldInfo
 
 You can view sample video about development at https://exprog.hu/yourchoice.html and discover usage at https://exprog.hu/Homework4Telekocsi
+
+# Install and configure components
+(under construction)
