@@ -34,7 +34,7 @@ I use this configuration and components:
 
 - Multi language support
 
-Width 18 years development experience I found that the database manager systems has a simple structure, that can organized around few things. The main entity annotations says everithing about the strategy:
+With 18 years development experience I found that the database manager systems has a simple structure, that can organized around few things. The main entity annotations says everithing about the strategy:
 
 - @EntityInfo, @EntityFieldInfo, @LookupFieldInfo
 - @DynamicMirror, @QueryInfo, @QueryFieldInfo
