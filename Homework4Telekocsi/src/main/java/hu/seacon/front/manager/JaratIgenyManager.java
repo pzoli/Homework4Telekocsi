@@ -249,7 +249,8 @@ public class JaratIgenyManager extends BasicManager<JaratIgeny> implements Seria
 
 	@Override
 	public boolean checkEditableRights(JaratIgeny entity) throws ActionAccessDeniedException {
-		boolean result = entity != null && entity.getIgenyStatusz() != null && !entity.getIgenyStatusz().getIgenyKod().equalsIgnoreCase("V");
+		//boolean result = entity != null && entity.getIgenyStatusz() != null && !entity.getIgenyStatusz().getIgenyKod().equalsIgnoreCase("V");
+		boolean result = true;
 		return result;
 	}
 

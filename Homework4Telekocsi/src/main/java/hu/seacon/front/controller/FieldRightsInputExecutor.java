@@ -16,30 +16,20 @@ import hu.exprog.honeyweb.utils.FieldModel;
 
 public class FieldRightsInputExecutor implements VisitTaskExecutor {
 
-	private Map<String,FieldModel> fieldModelMap;
+	private Map<String, FieldModel> fieldModelMap;
 
-	public FieldRightsInputExecutor(Map<String,FieldModel> fieldModelMap) {
+	public FieldRightsInputExecutor(Map<String, FieldModel> fieldModelMap) {
 		this.fieldModelMap = fieldModelMap;
 	}
 
 	@Override
 	public VisitResult execute(UIComponent component) {
 		VisitResult result = VisitResult.ACCEPT;
-		if (component instanceof UIInput) {
-			UIInput input = (UIInput) component;
-			String propertyName = (String) input.getAttributes().get("propertyName");
-			if (propertyName != null) {
-				FieldModel fieldModel = fieldModelMap.get(propertyName);
-				if (fieldModel != null) {
-					FieldEntitySpecificRightsInfo rights = fieldModel.getFieldEntitySpecificRightsInfo();
-					if (rights != null && rights.disabled() != null && !rights.disabled().isEmpty()) {
-						if (input instanceof SelectOneMenu) {
-							((SelectOneMenu)input).setDisabled(evalELToBoolean(rights.disabled()));
-						}
-					}
-				}
-			}
-		}
+		UIInput input = (UIInput) component;
+		String propertyName = (String) input.getAttributes().get("propertyName");
+		FieldModel fieldModel = fieldModelMap.get(propertyName);
+		FieldEntitySpecificRightsInfo rights = fieldModel.getFieldEntitySpecificRightsInfo();
+		((SelectOneMenu) input).setDisabled(evalELToBoolean(rights.disabled()));
 		return result;
 	}
 
@@ -57,8 +47,24 @@ public class FieldRightsInputExecutor implements VisitTaskExecutor {
 	}
 
 	@Override
-	public boolean shouldExecute(UIComponent input) {
-		return true;
+	public boolean shouldExecute(UIComponent component) {
+		boolean result = false;
+		if (component instanceof UIInput) {
+			UIInput input = (UIInput) component;
+			String propertyName = (String) input.getAttributes().get("propertyName");
+			if (propertyName != null) {
+				FieldModel fieldModel = fieldModelMap.get(propertyName);
+				if (fieldModel != null) {
+					FieldEntitySpecificRightsInfo rights = fieldModel.getFieldEntitySpecificRightsInfo();
+					if (rights != null && rights.disabled() != null && !rights.disabled().isEmpty()) {
+						if (input instanceof SelectOneMenu) {
+							result = true;
+						}
+					}
+				}
+			}
+		}
+		return result;
 	}
 
 }
