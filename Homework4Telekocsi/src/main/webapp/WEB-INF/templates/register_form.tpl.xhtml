@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:form id="registerForm" name="form_register">
+		<p align="center">Regisztráció</p>
+		<p:focus context="registerPanel" />
+		<h:panelGrid id="registerPanel" columns="2" style="margin:auto;"
+			columnClasses="formlabel,forminput">
+
+			<h:outputLabel id="email" value="E-mail cím">:</h:outputLabel>
+			<p:inputText tabindex="1" id="useremail"
+				value="#{userRegisterManager.current.emailAddress}" />
+
+			<h:outputLabel value="Név">:</h:outputLabel>
+			<p:inputText tabindex="2" id="username"
+				value="#{userRegisterManager.current.userName}" />
+
+			<h:outputLabel value="Jelszó">:</h:outputLabel>
+			<p:password tabindex="3" id="password"
+				value="#{userRegisterManager.current.userPassword}" />
+		</h:panelGrid>
+		<h:panelGrid style="margin: auto;" columns="1">
+			<p:captcha label="Captcha" language="#{localeManager.language}"/>
+		</h:panelGrid>
+		<p>
+			<p:commandButton id="submit" value="Regisztráció" ajax="false"
+				action="#{userRegisterManager.save()}" update="@form,growl" />
+		</p>
+	</h:form>
+</ui:composition>

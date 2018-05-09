@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:dp="http://infokristaly.hu/dynap">
+	<div class="viewAlternateCommands">
+		<h:form id="actinoForm">
+			<p:commandButton value="#{msg['generate-xhtml']}" update="growl"
+				rendered="#{authBackingBean.principalRoles.indexOf('ROLE_DEVELOPER') > -1}"
+				action="#{jaratFoglaltsagManager.generateXHTMLFromTemplate()}" />
+			<p:commandButton
+				action="#{jaratFoglaltsagManager.reportSelectedAssets()}"
+				partialSubmit="true" value="Report" process="@this,:tableForm"
+				oncomplete="PF('dlgDowloadReportWidgetVar').show()">
+			</p:commandButton>
+		</h:form>
+	</div>
+	<p:dialog id="dlgDowloadReport" widgetVar="dlgDowloadReportWidgetVar"
+		header="Report download">
+		<h:form>
+			<p:commandButton value="Download" ajax="false"
+				onclick="PF('dlgDowloadReportWidgetVar').hide()">
+				<p:fileDownload value="#{jaratFoglaltsagManager.exportFile}" />
+			</p:commandButton>
+		</h:form>
+	</p:dialog>
+	<dp:dialog dialogWidgetVar="dlgJaratFoglaltsagWidget"
+		dialogHeader="#{msg['jaratfoglaltsag-dialogheader']}"
+		managerBean="#{jaratFoglaltsagManager}"
+		formModel="#{jaratFoglaltsagManager.formModel}" />
+	<dp:dynTable managerBean="#{jaratFoglaltsagManager}"
+		tableHeader="#{msg['jaratfoglaltsag-table']}"
+		dialogWidgetVar="dlgJaratFoglaltsagWidget" editable="true" />
+</ui:composition>

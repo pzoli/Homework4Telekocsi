@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/templates/default-simple.xhtml">
+	<f:metadata>
+		<f:viewAction action="#{entityInfoComponentManager.setSelectMode('multiple')}" />
+		<f:viewAction action="#{entityInfoComponentManager.setDialogMode('')}"/>
+	</f:metadata>
+	<ui:define name="content">
+		<ui:include src="/WEB-INF/templates/components.tpl.xhtml"/>
+	</ui:define>
+</ui:composition>

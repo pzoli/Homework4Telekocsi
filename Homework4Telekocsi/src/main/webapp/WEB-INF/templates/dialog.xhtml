@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Dokumentum adminisztráció</title>
+	<f:facet name="first">
+		<meta http-equiv="x-ua-compatible" content="IE=9" />
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="index, follow" name="robots" />
+		<link type="text/css" rel="stylesheet"
+			href="${request.contextPath}/resources/css/dynaform.css" />
+		<link type="text/css" rel="stylesheet"
+			href="${request.contextPath}/resources/css/box-model.css" />
+		<link type="text/css" rel="stylesheet"
+			href="${request.contextPath}/resources/css/layout.css" />
+
+	</f:facet>
+
+</h:head>
+<f:view contentType="text/html" locale="#{localeManager.locale}">
+	<h:body>
+		<p:growl id="growl" showDetail="false" sticky="true" />
+		<div class="viewBorder">
+			<div class="view">
+				<ui:insert name="content" />
+			</div>
+		</div>
+	</h:body>
+</f:view>
+</html>

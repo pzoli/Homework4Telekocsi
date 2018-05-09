@@ -1,0 +1,17 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:p="http://primefaces.org/ui">
+	<div class="viewAlternateCommands">
+		<p:outputLabel>Aktiválás megtörtént. Lépjen be a szolgáltatásba!</p:outputLabel>
+		<br />
+		<h:form>
+			<p:commandButton id="login" value="Belépés" ajax="false"
+				action="/user/self-manager.xhtml?faces-redirect=true" />
+			<br />
+		</h:form>
+	</div>
+</ui:composition>

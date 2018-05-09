@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/dialog.xhtml">
+	<f:metadata>
+		<f:viewParam name="selectMode" value="#{gepjarmuFlottaManager.selectMode}" />
+		<f:viewParam name="dialogMode" value="#{gepjarmuFlottaManager.dialogMode}" />
+	</f:metadata>
+	<ui:define name="content">
+		<ui:include src="/WEB-INF/templates/gepjarmuflotta.tpl.xhtml"/>
+	</ui:define>
+</ui:composition>

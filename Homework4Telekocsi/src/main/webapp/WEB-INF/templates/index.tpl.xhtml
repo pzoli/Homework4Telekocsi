@@ -1,0 +1,16 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:p="http://primefaces.org/ui">
+	<div class="viewAlternateCommands">
+		<p:outputLabel>Akadálymentes Telekocsi</p:outputLabel><br/>
+		<h:graphicImage width="192" value="/resources/img/akadalymentes.jpg" />
+		<h:form>
+          <p:commandButton id="login" value="Belépés" ajax="false" action="/user/self-manager.xhtml?faces-redirect=true"/><br/>
+          <p:commandLink id="register" value="Regisztráció" ajax="false" action="/register.xhtml?faces-redirect=true"/>
+		</h:form>
+	</div>
+</ui:composition>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:dp="http://infokristaly.hu/dynap">
+	<div class="viewAlternateCommands">
+		<h:form id="actinoForm">
+			<p:commandButton value="#{msg['azonositoTipusTableHeader']}"
+				action="/admin/azonositotipus.xhtml?faces-redirect=true"/>
+		</h:form>
+	</div>
+	<dp:dialog dialogWidgetVar="dlgAzonositoTipusWidget" dialogHeader="#{msg['azonositoTipusDialogHeader']}"
+		managerBean="#{azonositoTipusManager}"
+		formModel="#{azonositoTipusManager.formModel}" />
+	<dp:dynTable managerBean="#{azonositoTipusManager}"
+		tableHeader="#{msg['azonositoTipusTableHeader']}"
+		dialogWidgetVar="dlgAzonositoTipusWidget" editable="true" />
+</ui:composition>

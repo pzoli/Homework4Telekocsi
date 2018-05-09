@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>#{msg['application.title']}</title>
+	<f:facet name="first">
+		<meta http-equiv="x-ua-compatible" content="IE=9" />
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="index, follow" name="robots" />
+		<link type="text/css" rel="stylesheet"
+			href="${request.contextPath}/resources/css/dynaform.css" />
+		<link type="text/css" rel="stylesheet"
+			href="${request.contextPath}/resources/css/box-model.css" />
+		<link type="text/css" rel="stylesheet"
+			href="${request.contextPath}/resources/css/layout.css" />
+		<link type="text/css" rel="stylesheet"
+			href="${request.contextPath}/resources/css/table-style.css" /> 
+	</f:facet>
+	<h:outputScript library="js" name="calendar.js" />
+</h:head>
+<f:view contentType="text/html" locale="#{localeManager.locale}">
+	<h:body>
+		<p:growl id="idlemessages" showDetail="true" sticky="true" />
+		<p:growl id="growl" showDetail="false" sticky="true" />
+		<h:form>
+			<p:idleMonitor timeout="6000" id="idleMonitor">
+				<p:ajax event="idle" listener="#{idleMonitorView.onIdle}"
+					update="idlemessages" />
+				<p:ajax event="active" listener="#{idleMonitorView.onActive}"
+					update="idlemessages" />
+			</p:idleMonitor>
+
+			<p:ajaxExceptionHandler id="ajaxExpHandler"
+				type="javax.faces.application.ViewExpiredException"
+				update="exceptionDialog" onexception="PF('exceptionDialog').show();" />
+			<p:dialog id="exceptionDialog" header="Bejelentkezés"
+				widgetVar="exceptionDialog">
+				<p:panel>
+					<h:outputText value="Kérem jelentkezzen be újra." />
+					<br />
+
+				</p:panel>
+
+				<p:button onclick="document.location.href = document.location.href;"
+					value="Újratöltés!"
+					rendered="#{pfExceptionHandler.type == 'javax.faces.application.ViewExpiredException'}" />
+			</p:dialog>
+		</h:form>
+
+		<pe:layout fullPage="true" stateCookie="true">
+			<pe:layoutPane position="west" resizable="true" size="170"
+				state="#{viewStateManager.stateEast}">
+				<ui:include src="/WEB-INF/templates/menu.tpl.xhtml" />
+			</pe:layoutPane>
+
+			<pe:layoutPane position="center">
+				<div class="viewBorder">
+					<div class="view">
+						<ui:insert name="content" />
+						<p style="font-size: small">rev.:
+							#{ver['version.major']}.#{ver['version.minor']}.#{ver['version.date']}
+							#{ver['version.time']} #{appProperties.projectStage}
+							#{authBackingBean.loggedInPrincipal.name} {Roles:
+							#{authBackingBean.getPrincipalRoles()}}</p>
+					</div>
+				</div>
+				<p:ajaxStatus
+					style="width:64px;height:64px;position:fixed;right:5px;bottom:5px">
+					<f:facet name="start">
+						<h:graphicImage alt="loading" name="img/loading.gif" />
+					</f:facet>
+
+					<f:facet name="complete">
+						<h:outputText value="" />
+					</f:facet>
+				</p:ajaxStatus>
+			</pe:layoutPane>
+			<ui:insert name="dialogs" />
+		</pe:layout>
+	</h:body>
+</f:view>
+</html>

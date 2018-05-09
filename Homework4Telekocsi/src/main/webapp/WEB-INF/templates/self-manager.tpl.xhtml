@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:dp="http://infokristaly.hu/dynap">
+	<f:metadata>
+		<f:event type="preRenderComponent"
+			listener="#{selfManager.setCurrentToLoggedIn()}" />
+	</f:metadata>
+	<div class="viewAlternateCommands">
+		<h:form id="actinoForm">
+			<p:commandButton value="#{msg['unsubscribe-button']}" update="growl"
+				action="#{selfManager.disableLoggedInUser()}">
+				<p:confirm header="#{msg['confirm-dialogheader']}"
+					message="#{msg['unsubscribe-user-message']}" icon="ui-icon-alert" />
+			</p:commandButton>
+		</h:form>
+	</div>
+	<h:panelGrid id="registerPanel" columns="1" style="margin:auto;">
+		<dp:form managerBean="#{selfManager}"
+			formModel="#{selfManager.formModel}" />
+	</h:panelGrid>
+	<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+		<h:form>
+			<p:commandButton value="#{msg['yes-button']}" type="button"
+				styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+			<p:commandButton value="#{msg['no-button']}" type="button"
+				styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+		</h:form>
+	</p:confirmDialog>
+
+</ui:composition>

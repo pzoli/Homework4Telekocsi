@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:dp="http://infokristaly.hu/dynap">
+	<div class="viewAlternateCommands">
+		<h:form id="actinoForm">
+		</h:form>
+	</div>
+	<dp:dialog dialogWidgetVar="dlgGepjarmuFlottaWidget" dialogHeader="#{msg['gepjarmuFlottaDialogHeader']}"
+		managerBean="#{gepjarmuFlottaManager}"
+		formModel="#{gepjarmuFlottaManager.formModel}" />
+	<dp:dynTable managerBean="#{gepjarmuFlottaManager}"
+		tableHeader="#{msg['gepjarmuFlottaTableHeader']}"
+		dialogWidgetVar="dlgGepjarmuFlottaWidget" editable="true" />
+</ui:composition>

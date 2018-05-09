@@ -1,0 +1,132 @@
+@CHARSET "UTF-8";
+.ui-datatable {
+    border-color: #FFFFAAA;
+    border: 3px;
+    text-align:left;
+}
+
+.center-column {
+    text-align:center;
+}
+
+.ui-datatable-odd {
+    background: none repeat scroll 0 0 #F2F2F2;
+}
+
+.icon-company {
+	background-image:
+		url("../img/company-icon-48.png")
+		!important;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+}
+
+.icon-system {
+	background-image: url("../img/applications-system.png") !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+}
+
+.icon-messages {
+	background-image: url("../img/evolution.png") !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+}
+
+.icon-users {
+	background-image: url("../img/preferences-desktop-accessibility.png") !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+}
+
+.icon-jaratigeny {
+	background-image: url("../img/car-user.jpg") !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+}
+
+.icon-jarat {
+	background-image: url("../img/jarat.png") !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+}
+
+.icon-jaratfoglaltsag {
+	background-image: url("../img/fuel.png") !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+}
+
+.icon-car {
+	background-image: url("../img/car.png") !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+}
+
+.icon-logout {
+	background-image: url("../img/system-log-out.png") !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+}
+
+.icon-temperature {
+	background-image: url("../img/temperature-celsius-degree-weather-forcast.png") !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+}
+
+.ui-tooltip{background-color: #4c4c4c; border: 1px solid #4c4c4c; border-top-left-radius: 0; color: #fff;}
+.ui-tooltip-right, 
+.ui-tooltip-left, 
+.ui-tooltip-top, 
+.ui-tooltip-bottom {background: none; border: 0 none;}
+
+.ui-tooltip {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px 0 #ddd;
+    -moz-box-shadow: 0 0 10px 0 #ddd;
+    -webkit-box-shadow: 0 0 10px 0 #ddd;
+    color: #666;
+    background: #f8f8f8;
+}
+.fehlerTooltip {z-index: 3000 !important;}

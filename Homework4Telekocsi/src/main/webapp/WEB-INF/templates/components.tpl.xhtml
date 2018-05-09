@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:dp="http://infokristaly.hu/dynap">
+	<div class="viewAlternateCommands">
+		<h:form id="actinoForm">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="#{msg['functionLabel']}"/>
+				<p:inputText value="#{entityInfoComponentManager.functionLabel}" />
+			
+				<p:outputLabel value="#{msg['package-name']}"/>
+				<p:inputText value="#{entityInfoComponentManager.packageName}" />
+				
+				<p:outputLabel value="#{msg['class-name']}"/>
+				<p:inputText value="#{entityInfoComponentManager.clazzName}" />
+				
+				<p:outputLabel value="#{msg['templates-dir']}"/>
+				<p:inputText value="#{entityInfoComponentManager.templatesDir}" />
+				
+				<p:outputLabel value="#{msg['xhtml-target-dir']}"/>
+				<p:inputText value="#{entityInfoComponentManager.xhtmlTargetDir}" />
+
+				<p:outputLabel value="#{msg['projecthome-dir']}"/>
+				<p:inputText value="#{entityInfoComponentManager.projectHomeDir}" />
+				
+				<p:outputLabel value="#{msg['projectsub-dir']}"/>
+				<p:inputText value="#{entityInfoComponentManager.packageSubDir}" />
+
+				<p:outputLabel value="#{msg['logfile']}"/>
+				<p:inputText value="#{entityInfoComponentManager.logFile}" />
+				
+				<p:outputLabel value="#{msg['movefilestotarget']}"/>
+				<p:selectBooleanCheckbox value="#{entityInfoComponentManager.moveFilesToTarget}"/>
+			</p:panelGrid>
+			<p:commandButton value="#{msg['generate-xhtml']}" update="growl"
+				rendered="#{authBackingBean.principalRoles.indexOf('ROLE_DEVELOPER') > -1}"
+				action="#{entityInfoComponentManager.generateComponentsFromTemplate()}" />
+		</h:form>
+	</div>
+</ui:composition>

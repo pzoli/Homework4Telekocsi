@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cherry_Landscape" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="7a5c9b49-9dc5-422a-ac69-e92cf61ef530">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="DejaVu Sans" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="DejaVu Sans" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="DejaVu Sans" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="DejaVu Sans"/>
+	<style name="Row" mode="Transparent" fontName="DejaVu Sans" pdfFontName="DejaVu Sans">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="ReportTitle" class="java.lang.String"/>
+	<parameter name="ReportDate" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="igenyfogadasDatuma" class="java.util.Date"/>
+	<field name="jaratIgeny.igenyloNeveIdopont" class="java.lang.String"/>
+	<variable name="Today" class="java.lang.String">
+		<variableExpression><![CDATA[(new SimpleDateFormat("yyyy.MM.dd")).format(new Date())]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="65" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement style="Title" x="137" y="0" width="280" height="30" forecolor="#000000" uuid="70befe7d-7d65-4ef8-81ab-21b772f26911"/>
+				<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ReportTitle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#000000" uuid="ec211c31-9191-4385-842c-4c8e56a89b8d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+" / "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="e17b66b3-3be9-43ed-92bb-a345b126c752"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="232" y="35" width="76" height="14" uuid="864211a8-37d8-4c20-a9a5-94729cbd9e04"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[(new SimpleDateFormat("yyyy.MM.dd")).format($P{ReportDate})]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="17" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="60" y="0" width="63" height="12" forecolor="#000000" uuid="eb3ba112-a926-4ab0-aec8-efb7b9afd350"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Járat igény]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="434" y="0" width="79" height="12" forecolor="#000000" uuid="6242244f-9812-4c48-a0b0-9531e135abb1"/>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Elfogadva]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="0" width="42" height="12" uuid="5e633416-698d-446e-acf5-55cedc56f968">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S.sz.]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="-1" y="12" width="552" height="1" uuid="2a43c8be-d47d-4c69-a813-041193775274"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="550" height="18" uuid="34a2ae4b-4055-476b-8676-d499f6af510b"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="60" y="0" width="360" height="18" uuid="81baf8a2-18d8-4f40-b0f7-2f8ff19020ed"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{jaratIgeny.igenyloNeveIdopont}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="435" y="0" width="77" height="18" uuid="c14ac013-1b01-4dd8-afea-46f809465008">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{igenyfogadasDatuma}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="15" y="0" width="42" height="18" uuid="8e4fa210-2920-4935-8e5f-e7840861a754">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="12" splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="18"/>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
