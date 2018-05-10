@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJBException;
@@ -151,7 +152,11 @@ public class SystemUserManager extends BasicManager<SystemUser> implements Seria
 	}
 
 	public List<Usergroup> getUsergroup() {
-		return userGroupService.findAll();
+		List<Usergroup> result = userGroupService.findAll();
+		if (!authBackingBean.checkDeveloperRights()) {
+			result = result.stream().filter(g -> !g.getRolegroup().equalsIgnoreCase("ROLE_DEVELOPER")).collect(Collectors.toList());
+		}
+		return result;
 	}
 
 	public List<Language> getLanguage() {

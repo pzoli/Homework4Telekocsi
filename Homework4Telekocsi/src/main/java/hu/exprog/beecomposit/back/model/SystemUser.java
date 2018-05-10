@@ -19,6 +19,8 @@ import javax.persistence.Version;
 
 import hu.exprog.honeyweb.front.annotations.DynamicMirror;
 import hu.exprog.honeyweb.front.annotations.EntityFieldInfo;
+import hu.exprog.honeyweb.front.annotations.FieldEntitySpecificRightsInfo;
+import hu.exprog.honeyweb.front.annotations.FieldRightsInfo;
 import hu.exprog.honeyweb.front.annotations.LookupFieldInfo;
 import hu.exprog.honeyweb.front.annotations.QueryFieldInfo;
 import hu.exprog.honeyweb.front.annotations.QueryInfo;
@@ -42,6 +44,7 @@ public class SystemUser implements java.io.Serializable {
 	private String sqlserverloginname;
 	@EntityFieldInfo(info = "#{msg['user-group']}", weight = 6, required = true, editor = "select")
 	@LookupFieldInfo(keyField = "id", labelField = "usergroup", detailDialogFile = "/admin/usergroup-dialog", filterField = "usergroup", sortField = "usergroup")
+	@FieldRightsInfo(admin="#{authBackingBean.checkDeveloperRights()}")
 	private Usergroup usergroup;
 	@EntityFieldInfo(info = "#{msg['password']}", weight = 2, editor = "password", listable = false, postProcess = true)
 	private String osUserPassword;
