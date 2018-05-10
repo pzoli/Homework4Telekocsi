@@ -29,8 +29,8 @@
         <connection-url>jdbc:postgresql://localhost:5432/telekocsi?charSet=UTF8</connection-url>
         <driver>org.postgresql</driver>
         <security>
-            <user-name>pzoli</user-name>
-            <password>rombuszhal</password>
+            <user-name>user</user-name>
+            <password>password</password>
         </security>
     </datasource>
 </datasources>
