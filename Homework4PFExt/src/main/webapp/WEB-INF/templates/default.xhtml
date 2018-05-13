@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+<f:loadBundle basename="resources.application" var="app" />
+	<title><h:outputText value="#{app.welcomeTitle}" /></title>
+	<f:facet name="first">
+		<meta http-equiv="x-ua-compatible" content="IE=9" />
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="index, follow" name="robots" />
+	</f:facet>
+</h:head>
+<f:view contentType="text/html">
+	<h:body styleClass="art-main">
+		<h3>
+			<h:outputText value="#{app.welcomeHeading}" />
+		</h3>
+		<p>
+			<h:outputText value="#{app.welcomeMessage}" />
+		</p>
+
+		<div class="container">
+			<div class="art-sheet">
+				<div class="art-header">
+					<div class="art-shapes">
+						<h1 class="art-headline" id="pageTitle">Homework4PFExt</h1>
+					</div>
+				</div>
+
+				<ui:insert name="content" />
+			</div>
+		</div>
+	</h:body>
+</f:view>
+</html>

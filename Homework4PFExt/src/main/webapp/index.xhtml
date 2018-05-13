@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+		<h:form id="senderForm">
+			<h:panelGrid columns="3" columnClasses="formColumn1,formColumn2">
+				<h:outputText value="Recipients:" />
+				<pe:dynaForm id="peDynaForm" value="#{workflowBean.model}"
+					var="condition">
+					<pe:dynaFormControl type="value">
+						<p:inputText id="name" value="Name" tabindex="2"
+							style="width:400px;">
+							<f:attribute name="rcIndex" value="#{condition.index}" />
+						</p:inputText>
+						<p:watermark value="name@domain.com" for="name" />
+					</pe:dynaFormControl>
+					<pe:dynaFormControl type="clear">
+						<p:commandLink value="Remove"
+							process="@this,peDynaForm" update="peDynaForm"
+							action="#{workflowBean.removeCondition(condition)}"
+							global="false" style="margin-left:10px" />
+					</pe:dynaFormControl>
+				</pe:dynaForm>
+				<h:outputText value="" />
+
+				<p:commandLink value="New"
+					process="@this,peDynaForm" update="peDynaForm"
+					action="#{workflowBean.addCondition()}" global="false"
+					style="margin-left:10px" />
+				<h:outputText value="" />
+				<h:outputText value="" />
+			</h:panelGrid>
+			<p:commandButton value="Disable" action="#{workflowBean.setFormRights()}" update="peDynaForm"/>
+		</h:form>
+	</ui:define>
+</ui:composition>
