@@ -45,6 +45,7 @@ import hu.exprog.honeyweb.front.annotations.FieldRightsInfo;
 import hu.exprog.honeyweb.front.annotations.LookupFieldInfo;
 import hu.exprog.honeyweb.front.annotations.QueryFieldInfo;
 import hu.exprog.honeyweb.front.annotations.QueryInfo;
+import hu.exprog.honeyweb.front.controller.FieldRightsInputExecutor;
 import hu.exprog.honeyweb.front.exceptions.ActionAccessDeniedException;
 import hu.exprog.honeyweb.middle.services.BasicService;
 import hu.exprog.honeyweb.utils.ColumnModel;
@@ -53,7 +54,6 @@ import hu.exprog.honeyweb.utils.FieldRights;
 import hu.exprog.honeyweb.utils.LookupColumnModel;
 import hu.exprog.honeyweb.utils.LookupFieldModel;
 import hu.exprog.honeyweb.utils.StringTools;
-import hu.seacon.front.controller.FieldRightsInputExecutor;
 
 public abstract class BasicManager<T> {
 

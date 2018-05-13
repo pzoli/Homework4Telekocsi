@@ -1,4 +1,4 @@
-package hu.seacon.front.controller;
+package hu.exprog.honeyweb.front.controller;
 
 import java.util.Map;
 
