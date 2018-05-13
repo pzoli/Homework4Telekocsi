@@ -33,6 +33,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import org.primefaces.extensions.component.dynaform.DynaForm;
+import org.primefaces.extensions.model.dynaform.DynaFormControl;
+import org.primefaces.extensions.model.dynaform.DynaFormLabel;
 import org.primefaces.extensions.model.dynaform.DynaFormModel;
 import org.primefaces.extensions.model.dynaform.DynaFormRow;
 import org.primefaces.extensions.util.visitcallback.ExecutableVisitCallback;
@@ -53,7 +55,7 @@ public class WorkflowBean implements Serializable {
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -2073307087048785459L;
 
-	private DynaFormModel model;
+	private DynaFormModel model = new DynaFormModel();
 
 	private List<Condition> conditions;
 
@@ -70,10 +72,12 @@ public class WorkflowBean implements Serializable {
 
 		Condition condition = new Condition("", "", 0);
 		conditions.add(condition);
-
+		
 		DynaFormRow row = model.createRegularRow();
-		row.addControl(condition, "value");
-
+		DynaFormLabel label = row.addLabel(condition.getName());
+		DynaFormControl control = row.addControl(condition, "value");
+		control.setKey(condition.getName());
+		label.setForControl(control);
 	}
 
 	public static final Set<VisitHint> VISIT_HINTS = EnumSet.of(VisitHint.SKIP_UNRENDERED);
@@ -114,7 +118,10 @@ public class WorkflowBean implements Serializable {
 		Condition condition = new Condition("", "", conditions.size());
 		conditions.add(condition);
 		DynaFormRow row = model.createRegularRow();
-		row.addControl(condition, "value");
+		DynaFormControl control =  row.addControl(condition, "value");
+		DynaFormLabel label = row.addLabel(condition.getName());
+		control.setKey(condition.getName());
+		label.setForControl(control);
 		row.addControl(condition, "clear");
 	}
 

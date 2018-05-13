@@ -5,12 +5,7 @@ import javax.faces.component.UIInput;
 import javax.faces.component.visit.VisitResult;
 
 import org.primefaces.component.inputtext.InputText;
-import org.primefaces.component.selectonemenu.SelectOneMenu;
-import org.primefaces.extensions.component.dynaform.UIDynaFormControl;
 import org.primefaces.extensions.util.visitcallback.VisitTaskExecutor;
-
-import com.arjuna.ats.internal.arjuna.common.UidHelper;
-import com.sun.faces.facelets.compiler.UIText;
 
 public class FieldRightsInputExecutor implements VisitTaskExecutor {
 
