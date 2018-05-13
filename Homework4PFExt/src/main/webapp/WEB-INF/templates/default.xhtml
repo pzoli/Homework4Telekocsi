@@ -5,8 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-<f:loadBundle basename="resources.application" var="app" />
-	<title><h:outputText value="#{app.welcomeTitle}" /></title>
+	<title><h:outputText value="Wellcome" /></title>
 	<f:facet name="first">
 		<meta http-equiv="x-ua-compatible" content="IE=9" />
 		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
@@ -15,13 +14,6 @@
 </h:head>
 <f:view contentType="text/html">
 	<h:body styleClass="art-main">
-		<h3>
-			<h:outputText value="#{app.welcomeHeading}" />
-		</h3>
-		<p>
-			<h:outputText value="#{app.welcomeMessage}" />
-		</p>
-
 		<div class="container">
 			<div class="art-sheet">
 				<div class="art-header">
