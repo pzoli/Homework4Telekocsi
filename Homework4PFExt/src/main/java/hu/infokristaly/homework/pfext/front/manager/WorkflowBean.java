@@ -27,6 +27,7 @@ import java.util.Set;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
 import javax.faces.component.visit.VisitContext;
 import javax.faces.component.visit.VisitHint;
 import javax.faces.context.FacesContext;
@@ -49,7 +50,7 @@ import hu.infokristaly.homework.pfext.middle.utils.FieldRightsInputExecutor;
  * @author pzoli
  */
 @Named
-@SessionScoped
+@ManagedBean(eager=true)
 public class WorkflowBean implements Serializable {
 
 	/** The Constant serialVersionUID. */
