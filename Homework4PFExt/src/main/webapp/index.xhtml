@@ -8,8 +8,7 @@
 	template="/WEB-INF/templates/default.xhtml">
 	<ui:define name="content">
 		<h:form id="senderForm">
-			<h:panelGrid columns="3" columnClasses="formColumn1,formColumn2">
-				<h:outputText value="Recipients:" />
+			<h:panelGrid columns="4" columnClasses="formColumn1,formColumn2">
 				<pe:dynaForm id="peDynaForm" value="#{workflowBean.model}"
 					var="condition">
 					<pe:dynaFormControl type="value">
@@ -26,13 +25,11 @@
 							global="false" style="margin-left:10px" />
 					</pe:dynaFormControl>
 				</pe:dynaForm>
-				<h:outputText value="" />
 
 				<p:commandLink value="New"
 					process="@this,peDynaForm" update="peDynaForm"
 					action="#{workflowBean.addCondition()}" global="false"
 					style="margin-left:10px" />
-				<h:outputText value="" />
 				<h:outputText value="" />
 			</h:panelGrid>
 			<p:commandButton value="Disable" action="#{workflowBean.setFormRights()}" update="peDynaForm"/>

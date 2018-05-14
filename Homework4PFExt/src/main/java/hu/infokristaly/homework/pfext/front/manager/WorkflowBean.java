@@ -26,8 +26,8 @@ import java.util.List;
 import java.util.Set;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.component.visit.VisitContext;
 import javax.faces.component.visit.VisitHint;
 import javax.faces.context.FacesContext;
@@ -50,7 +50,8 @@ import hu.infokristaly.homework.pfext.middle.utils.FieldRightsInputExecutor;
  * @author pzoli
  */
 @Named
-@ManagedBean(eager=true)
+@ManagedBean
+@SessionScoped
 public class WorkflowBean implements Serializable {
 
 	/** The Constant serialVersionUID. */
@@ -71,7 +72,7 @@ public class WorkflowBean implements Serializable {
 		model = new DynaFormModel();
 		conditions = new ArrayList<Condition>();
 
-		Condition condition = new Condition("", "", 0);
+		Condition condition = new Condition("Name0", "a0@b.hu", 0);
 		conditions.add(condition);
 		
 		DynaFormRow row = model.createRegularRow();
@@ -79,6 +80,7 @@ public class WorkflowBean implements Serializable {
 		DynaFormControl control = row.addControl(condition, "value");
 		control.setKey(condition.getName());
 		label.setForControl(control);
+		row.addControl(condition, "clear");
 	}
 
 	public static final Set<VisitHint> VISIT_HINTS = EnumSet.of(VisitHint.SKIP_UNRENDERED);
@@ -116,11 +118,11 @@ public class WorkflowBean implements Serializable {
 	}
 
 	public void addCondition() {
-		Condition condition = new Condition("", "", conditions.size());
+		Condition condition = new Condition("Name"+conditions.size(), "a"+ conditions.size() +"@b.hu", conditions.size());
 		conditions.add(condition);
 		DynaFormRow row = model.createRegularRow();
-		DynaFormControl control =  row.addControl(condition, "value");
 		DynaFormLabel label = row.addLabel(condition.getName());
+		DynaFormControl control =  row.addControl(condition, "value");
 		control.setKey(condition.getName());
 		label.setForControl(control);
 		row.addControl(condition, "clear");
