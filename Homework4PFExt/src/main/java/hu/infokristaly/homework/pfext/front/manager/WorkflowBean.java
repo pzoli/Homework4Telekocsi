@@ -31,7 +31,6 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.component.visit.VisitContext;
 import javax.faces.component.visit.VisitHint;
 import javax.faces.context.FacesContext;
-import javax.inject.Named;
 
 import org.primefaces.extensions.component.dynaform.DynaForm;
 import org.primefaces.extensions.model.dynaform.DynaFormControl;
@@ -49,8 +48,7 @@ import hu.infokristaly.homework.pfext.middle.utils.FieldRightsInputExecutor;
  * 
  * @author pzoli
  */
-@Named
-@ManagedBean
+@ManagedBean(name = "workflowBean")
 @SessionScoped
 public class WorkflowBean implements Serializable {
 

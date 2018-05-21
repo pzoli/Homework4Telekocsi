@@ -4,6 +4,7 @@ import javax.faces.component.UIComponent;
 import javax.faces.component.UIInput;
 import javax.faces.component.visit.VisitResult;
 
+import org.primefaces.PrimeFaces;
 import org.primefaces.component.inputtext.InputText;
 import org.primefaces.extensions.util.visitcallback.VisitTaskExecutor;
 
@@ -16,6 +17,7 @@ public class FieldRightsInputExecutor implements VisitTaskExecutor {
 		Integer rcIndex = (Integer) input.getAttributes().get("rcIndex");
 		if (rcIndex != null && rcIndex.equals(1) && input instanceof InputText) {
 			((InputText)input).setDisabled(true);
+			PrimeFaces.current().ajax().update(input.getClientId());
 		}
 		return result;
 	}
