@@ -1,6 +1,6 @@
 This is the exprog.hu HoneyWeb and BeeComposit reference implementation project for DynaForm force presentation. A disability carpooling project that made in Hungary based on Seacon Europe Ltd. carpool modul for SeaFleet.
 
-I make an @Entity annotatons based database manager framework for easy and rapid administration program development that use Primefaces and its Extesions package.
+I make an @Entity annotations based database manager framework for easy and rapid administration program development that use Primefaces and its Extesions package.
 
 I can rapidly connect database structure creation with JSF GUI creation with dynamic forms, filterable and orderable tables from entity annotations.
 
