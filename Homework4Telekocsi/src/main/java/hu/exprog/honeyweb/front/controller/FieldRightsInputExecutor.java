@@ -8,6 +8,7 @@ import javax.faces.component.UIInput;
 import javax.faces.component.visit.VisitResult;
 import javax.faces.context.FacesContext;
 
+import org.primefaces.component.calendar.Calendar;
 import org.primefaces.component.selectonemenu.SelectOneMenu;
 import org.primefaces.extensions.util.visitcallback.VisitTaskExecutor;
 
@@ -29,7 +30,18 @@ public class FieldRightsInputExecutor implements VisitTaskExecutor {
 		String propertyName = (String) input.getAttributes().get("propertyName");
 		FieldModel fieldModel = fieldModelMap.get(propertyName);
 		FieldEntitySpecificRightsInfo rights = fieldModel.getFieldEntitySpecificRightsInfo();
-		((SelectOneMenu) input).setDisabled(evalELToBoolean(rights.disabled()));
+		if (rights.disabled() != null) {
+			Boolean disabled = evalELToBoolean(rights.disabled());
+			if (disabled != null && disabled) {
+				component.getAttributes().put("disabled", true);
+			}
+		}
+		if (rights.readOnly() != null) {
+			Boolean readonly = evalELToBoolean(rights.readOnly());
+			if (readonly != null && readonly) {
+				component.getAttributes().put("readonly",true);
+			}
+		}
 		return result;
 	}
 
@@ -56,7 +68,7 @@ public class FieldRightsInputExecutor implements VisitTaskExecutor {
 				FieldModel fieldModel = fieldModelMap.get(propertyName);
 				if (fieldModel != null) {
 					FieldEntitySpecificRightsInfo rights = fieldModel.getFieldEntitySpecificRightsInfo();
-					if (rights != null && rights.disabled() != null && !rights.disabled().isEmpty()) {
+					if (rights != null) {
 						if (input instanceof SelectOneMenu) {
 							result = true;
 						}
