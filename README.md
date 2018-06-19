@@ -44,7 +44,13 @@ With 18 years development experience I found that the database manager systems h
 You can view sample video about development at https://exprog.hu/yourchoice.html and discover usage at https://exprog.hu/Homework4Telekocsi
 
 # Install and configure components
-(under construction)
+
+## Install Wildfly
+
+## Install PostgreSQL
+
+### Import database tables
+
 
 ![Beecomposit UML](/Homework4Telekocsi/development/beecomposit.gif?raw=true "Beecomposit UML")
 ![Honeyweb UML](/Homework4Telekocsi/development/honeyweb-components.gif?raw=true "Honeyweb UML")
