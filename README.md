@@ -1,6 +1,6 @@
 ![Exprog.hu](/Homework4Telekocsi/development/exprog-open.png?raw=true "exprog.hu")
 
-This is the exprog.hu HoneyWeb and BeeComposit reference implementation project for DynaForm force presentation. A disability carpooling project that made in Hungary based on Seacon Europe Ltd. carpool modul for SeaFleet.
+This is the exprog.hu HoneyWeb and BeeComposit reference implementation project for DynaForm force presentation. A disability carpooling project that made in Hungary based on Seacon Europe Ltd. carpool modul for SeaFleet. Program licensed under GPLv3.
 
 I make an @Entity annotations based database manager framework for easy and rapid administration program development that use Primefaces and its Extesions package.
 
@@ -206,3 +206,9 @@ If everithing processed well, you can open program in a browser http://localhost
 
 ![Opening screen](/Homework4Telekocsi/development/opening-screen.png?raw=true "Opening screen")
 (I configured Wildfly to operate on 8088 port)
+
+## Versions
+
+### rev.: 2018.05.10 19:20
+#### Errors
+- Code generation not work well because working directory not set everiwhere and template not uploaded to git repository (because Seacon Seafleet code generation privacy policy). You feel free modify it for use.
