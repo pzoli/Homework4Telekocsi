@@ -45,3 +45,9 @@ You can view sample video about development at https://exprog.hu/yourchoice.html
 
 # Install and configure components
 (under construction)
+
+![Beecomposit UML](/Homework4Telekocsi/development/beecomposit.gif?raw=true "Beecomposit UML")
+![Honeyweb UML](/Homework4Telekocsi/development/honeyweb-components.gif?raw=true "Honeyweb UML")
+![Carpooling UML](/Homework4Telekocsi/development/telekocsi.gif?raw=true "Carpooling UML")
+
+Shared XMind map: http://www.xmind.net/m/9xYh]
