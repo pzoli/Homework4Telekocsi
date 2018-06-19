@@ -217,7 +217,7 @@ If everithing processed well, you can open program in a browser http://localhost
 
 ### rev.: 2018.05.10 19:20
 #### Errors
-- Code generation not work well because working directory not set everiwhere and template not uploaded to git repository (because Seacon Seafleet code generation privacy policy). You feel free modify it for use.
+- Code generation not work well because working directory not set everiwhere and template not uploaded to git repository (because Seacon SeaFleet code generation privacy policy). You feel free modify it for use.
 #### Help needed
 - Chat service with OmniFace and Websockets
 - Import exsisting elements into project (like NCF and QRCode handling for ticketing, PDF generation, SMS sending)
