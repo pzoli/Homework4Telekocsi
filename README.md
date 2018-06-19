@@ -43,14 +43,6 @@ With 18 years development experience I found that the database manager systems h
 
 You can view sample video about development at https://exprog.hu/yourchoice.html and discover usage at https://exprog.hu/Homework4Telekocsi
 
-# Install and configure components
-
-## Install Wildfly
-
-## Install PostgreSQL
-
-### Import database tables
-
 # Mind map
 ![Mind map](/Homework4Telekocsi/development/mindmap.png?raw=true "Mind map")
 
@@ -66,3 +58,96 @@ You can view sample video about development at https://exprog.hu/yourchoice.html
 ![Carpooling UML](/Homework4Telekocsi/development/telekocsi.gif?raw=true "Carpooling UML")
 
 Shared XMind map: http://www.xmind.net/m/9xYh
+
+# Install and configure components
+
+## Install JRE or JDK
+- Download JRE or JDK from Oracle (http://www.oracle.com/technetwork/java/javase/downloads/index.html) or from OpenJDK (http://openjdk.java.net/)
+- Install where you want (I will refere to JAVA_HOME as your installation directory)
+- Setup enviromet variables
+
+## Install Wildfly
+- Download Wildfly from http://wildfly.org/downloads/ (currently I tested with wildfly 11)
+- Install where you want (I will refere to WILDFLY_HOME as your installation directory)
+- Set up enviroment variables
+### Modify WILDFLY_HOME/standalone/configuration/standalone.xml
+#### Add enviroment constants to naming section
+- velocityLogFile: where you want to logging the template transformations
+- workingDirectory: where the template files located
+- webContext: where you want to appear the program context
+```xml
+        <subsystem xmlns="urn:jboss:domain:naming:2.0">
+            <bindings>
+                <simple name="java:jboss/Homework4Telekocsi/workingDirectory" value="/var/exprog" type="java.lang.String"/>
+                <simple name="java:jboss/Homework4Telekocsi/velocityLogFile" value="/var/exprog/velocity.log" type="java.lang.String"/>
+                <simple name="java:jboss/Homework4Telekocsi/webContext" value="http://localhost:8080/Homework4Telekocsi" type="java.lang.String"/>
+            </bindings>
+            <remote-naming/>
+        </subsystem>
+```
+#### Add security realm
+```xml
+        <subsystem xmlns="urn:jboss:domain:security:2.0">
+            <security-domains>
+...
+                <security-domain name="telekocsiRealm">
+                    <authentication>
+                        <login-module code="Database" flag="required">
+                            <module-option name="dsJndiName" value="java:jboss/datasources/Homework4TelekocsiDS"/>
+                            <module-option name="principalsQuery" value="select password from v_active_user where username=?"/>
+                            <module-option name="rolesQuery" value="select group_name as Role,'Roles' from user_join_group where user_name=?"/>
+                            <module-option name="unauthenticatedIdentity" value="anonymousUser"/>
+                            <module-option name="hashAlgorithm" value="SHA-256"/>
+                            <module-option name="hashEncoding" value="base64"/>
+                        </login-module>
+                    </authentication>
+                </security-domain>
+...
+            </security-domains>
+        </subsystem>
+```
+
+## Install PostgreSQL
+- Download PostgreSQL from https://www.postgresql.org/download/ (Currently I tested with 9.6)
+
+### Import database tables - using pgAdmin or psql in a terminal (please see the Postgres user manuals for decide what you want to do)
+- Create database user (please create user with parameters what you set in Homework4Telekocsi/src/main/webapp/WEB-INF/Homework4Telekocsi-ds.xml)
+- Set rights to you user for full rights to your database. With this wser program will create tables.
+- Create Quartz tables with lunching SQL scripts located at Homework4Telekocsi\src\main\db\quartz_tables_postgres.sql 
+
+## Deploy to Wildfly
+- Lanch maven build with
+```bash
+mvn package
+```
+- Then copy generated war to your $WILDFLY_HOME/standalone/deplyomets direcory
+
+### Start Wildfly
+- Lunch wildfly with $WILDFLY_HOME/bin/standalone.[sh/bat] - application will create remaining tables in PostgreSQL database
+
+## Create your first admin user
+```sql
+CREATE OR REPLACE VIEW v_active_user AS 
+ SELECT u.sqlserverloginname AS username,
+    u.osuserpassword AS password
+   FROM systemuser u
+  WHERE u.enabled = true;
+
+ALTER TABLE v_active_user
+  OWNER TO pzoli;
+
+INSERT INTO systemuser (id, sqlserverloginname, enabled, osuserpassword, username) VALUES
+(1, 'a@b.hu', true, 'jjXCzTv2ZBvbDiBQt2kyy7LmA0oN2swdm+qCprpX988=', 'Papp Zoltán (integrity)');
+
+INSERT INTO user_join_group (user_name, group_name) VALUES
+('a@b.hu', 'ROLE_ADMIN');
+
+INSERT INTO public.user_join_group(
+	group_name, user_name)
+	VALUES ('ROLE_DEVELOPER', 'a@b.hu');
+```
+
+With this specified user you can log in with username 'a@b.hu' and password 'q' (hash256 algorithm, salting development require here!)
+
+## Login to your program
+If everithing processed well, you can open program in a browser http://localhost:8080/Homework4Telekocsi
