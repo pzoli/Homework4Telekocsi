@@ -1,3 +1,5 @@
+![Exprog.hu](/Homework4Telekocsi/development/exprog-open.png?raw=true "exprog.hu")
+
 This is the exprog.hu HoneyWeb and BeeComposit reference implementation project for DynaForm force presentation. A disability carpooling project that made in Hungary based on Seacon Europe Ltd. carpool modul for SeaFleet.
 
 I make an @Entity annotations based database manager framework for easy and rapid administration program development that use Primefaces and its Extesions package.
@@ -60,17 +62,28 @@ You can view sample video about development at https://exprog.hu/yourchoice.html
 Shared XMind map: http://www.xmind.net/m/9xYh
 
 # Install and configure components
+## Requirements
+- Java enviroment (JRE or JDK)
+- PostgreSQL database
+- Wildfly JavaEE application server
+- Maven
 
 ## Install JRE or JDK
 - Download JRE or JDK from Oracle (http://www.oracle.com/technetwork/java/javase/downloads/index.html) or from OpenJDK (http://openjdk.java.net/)
-- Install where you want (I will refere to JAVA_HOME as your installation directory)
-- Setup enviromet variables
+- Install where you want (I will refere to JAVA_HOME as your installation directory if needed)
+- Setup enviromet variables (please refer to Java installation documentation)
+
+## Install Maven
+- Download Maven from https://maven.apache.org/
+- Install where you want (I will refer to MAVEN_HOME as your installation directory if needed)
+- Setup enviroment variables (please refer to Maven installation documentation)
 
 ## Install Wildfly
 - Download Wildfly from http://wildfly.org/downloads/ (currently I tested with wildfly 11)
 - Install where you want (I will refere to WILDFLY_HOME as your installation directory)
-- Set up enviroment variables
-### Modify WILDFLY_HOME/standalone/configuration/standalone.xml
+- Set up enviroment variables (please refer to Wildfly installation documentation)
+
+### Modify $WILDFLY_HOME/standalone/configuration/standalone.xml
 #### Add enviroment constants to naming section
 - velocityLogFile: where you want to logging the template transformations
 - workingDirectory: where the template files located
@@ -107,6 +120,44 @@ Shared XMind map: http://www.xmind.net/m/9xYh
         </subsystem>
 ```
 
+#### Add PostgreSQL JDBC driver to Wildfly
+```xml
+        <subsystem xmlns="urn:jboss:domain:datasources:5.0">
+            <datasources>
+...
+                <drivers>
+....
+                    <driver name="org.postgresql" module="org.postgresql">
+                        <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
+                    </driver>
+...
+...
+            </datasources>
+        </subsystem>
+...
+...
+```
+
+### Add JDBC jar file to Wildfly modules directory
+- Download PostgreSQL JDBC driver from https://jdbc.postgresql.org/ (I tested with version 42.2.1)
+- make 'postgresql' directory in $WILDFLY_HOME/modules/system/layers/base/org/
+- make 'main' directory in $WILDFLY_HOME/modules/system/layers/base/org/postgresql
+- copy postgresql-42.2.1.jar to this 'main' directory
+- make module.xml file to this 'main' directory next to the jar file with content bellow:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.5" name="org.postgresql">
+    <resources>
+        <resource-root path="postgresql-42.2.1.jar"/>
+    </resources>
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="javax.transaction.api"/>
+        <module name="javax.servlet.api" optional="true"/>
+    </dependencies>
+</module>
+```
+
 ## Install PostgreSQL
 - Download PostgreSQL from https://www.postgresql.org/download/ (Currently I tested with 9.6)
 
@@ -115,8 +166,9 @@ Shared XMind map: http://www.xmind.net/m/9xYh
 - Set rights to you user for full rights to your database. With this wser program will create tables.
 - Create Quartz tables with lunching SQL scripts located at Homework4Telekocsi\src\main\db\quartz_tables_postgres.sql 
 
+
 ## Deploy to Wildfly
-- Lanch maven build with
+- Build the project with maven in root directory where pom.xml located
 ```bash
 mvn package
 ```
@@ -151,3 +203,6 @@ With this specified user you can log in with username 'a@b.hu' and password 'q' 
 
 ## Login to your program
 If everithing processed well, you can open program in a browser http://localhost:8080/Homework4Telekocsi
+
+![Opening screen](/Homework4Telekocsi/development/opening-screen.png?raw=true "Opening screen")
+(I configured Wildfly to operate on 8088 port)
