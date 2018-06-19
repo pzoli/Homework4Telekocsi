@@ -51,9 +51,15 @@ You can view sample video about development at https://exprog.hu/yourchoice.html
 
 ### Import database tables
 
+# Generic UML descriptions
 
+## Beecomposit
 ![Beecomposit UML](/Homework4Telekocsi/development/beecomposit.gif?raw=true "Beecomposit UML")
+
+## Honeyweb
 ![Honeyweb UML](/Homework4Telekocsi/development/honeyweb-components.gif?raw=true "Honeyweb UML")
+
+## Carpooling UML
 ![Carpooling UML](/Homework4Telekocsi/development/telekocsi.gif?raw=true "Carpooling UML")
 
-Shared XMind map: http://www.xmind.net/m/9xYh]
+Shared XMind map: http://www.xmind.net/m/9xYh
