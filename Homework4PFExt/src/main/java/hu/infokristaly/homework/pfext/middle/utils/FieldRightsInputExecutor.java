@@ -16,7 +16,8 @@ public class FieldRightsInputExecutor implements VisitTaskExecutor {
 		UIInput input = (UIInput) component;
 		Integer rcIndex = (Integer) input.getAttributes().get("rcIndex");
 		if (rcIndex != null && rcIndex.equals(1) && input instanceof InputText) {
-			((InputText)input).setDisabled(true);
+			//((InputText)input).setDisabled(true);
+			((InputText)input).setReadonly(true);
 			PrimeFaces.current().ajax().update(input.getClientId());
 		}
 		return result;
