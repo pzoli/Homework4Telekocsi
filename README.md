@@ -51,6 +51,9 @@ You can view sample video about development at https://exprog.hu/yourchoice.html
 
 ### Import database tables
 
+# Mind map
+![Mind map](/Homework4Telekocsi/development/mindmap.png?raw=true "Mind map")
+
 # Generic UML descriptions
 
 ## Beecomposit
@@ -61,8 +64,5 @@ You can view sample video about development at https://exprog.hu/yourchoice.html
 
 ## Carpooling UML
 ![Carpooling UML](/Homework4Telekocsi/development/telekocsi.gif?raw=true "Carpooling UML")
-
-## Mind map
-![Mind map](/Homework4Telekocsi/development/mindmap.png?raw=true "Mind map")
 
 Shared XMind map: http://www.xmind.net/m/9xYh
