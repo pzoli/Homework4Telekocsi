@@ -211,7 +211,7 @@ If everithing processed well, you can open program in a browser http://localhost
 
 ## Seacon Hungary Ltd.
 
-![Seacon](/Homework4Telekocsi/development/seacon-logo.png?raw=true "https://www.seacon.hu")
+[![Seacon](/Homework4Telekocsi/development/seacon-logo.png?raw=true "https://www.seacon.hu")](https://www.seacon.hu)
 
 ## Versions
 
