@@ -50,11 +50,11 @@ You can view sample video about development at https://exprog.hu/yourchoice.html
 
 # Generic UML descriptions
 
-## Beecomposit
-![Beecomposit UML](/Homework4Telekocsi/development/beecomposit.gif?raw=true "Beecomposit UML")
+## BeeComposit
+![BeeComposit UML](/Homework4Telekocsi/development/beecomposit.gif?raw=true "BeeComposit UML")
 
-## Honeyweb
-![Honeyweb UML](/Homework4Telekocsi/development/honeyweb-components.gif?raw=true "Honeyweb UML")
+## HoneyWeb
+![HoneyWeb UML](/Homework4Telekocsi/development/honeyweb-components.gif?raw=true "HoneyWeb UML")
 
 ## Carpooling UML
 ![Carpooling UML](/Homework4Telekocsi/development/telekocsi.gif?raw=true "Carpooling UML")
