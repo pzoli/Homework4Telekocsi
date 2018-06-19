@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" automaticImage="GIF" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="hu.exprog.honeyweb.front.controller.UserActivationController" 
+    project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/controller/UserActivationController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="214" width="282" x="236" y="-459"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="hu.exprog.honeyweb.front.exceptions.ActionAccessDeniedException" 
+    project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/exceptions/ActionAccessDeniedException.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="247" x="558" y="-459"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="hu.exprog.honeyweb.front.controller.FieldRightsInputExecutor" 
+    project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/controller/FieldRightsInputExecutor.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="321" x="845" y="-459"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="hu.exprog.honeyweb.front.manager.BasicManager" project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/manager/BasicManager.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="1311" width="514" x="1206" y="-459"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <annotation id="5" language="java" name="hu.exprog.honeyweb.front.annotations.QueryFieldInfo" 
+    project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/annotations/QueryFieldInfo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="232" width="218" x="252" y="-193"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <annotation id="6" language="java" name="hu.exprog.honeyweb.front.annotations.QueryInfo" project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/annotations/QueryInfo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="218" x="510" y="-193"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <annotation id="7" language="java" name="hu.exprog.honeyweb.front.annotations.EditorFieldInfo" 
+    project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/annotations/EditorFieldInfo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="196" width="218" x="768" y="-193"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <annotation id="8" language="java" name="hu.exprog.honeyweb.front.annotations.EntityInfo" project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/annotations/EntityInfo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="346" y="151"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <annotation id="9" language="java" name="hu.exprog.honeyweb.front.annotations.DynamicMirror" 
+    project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/annotations/DynamicMirror.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="343" y="361"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <annotation id="10" language="java" name="hu.exprog.honeyweb.front.annotations.EntitySpecificRights" 
+    project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/annotations/EntitySpecificRights.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="329" y="557"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <annotation id="11" language="java" name="hu.exprog.honeyweb.front.annotations.EditorInfo" 
+    project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/annotations/EditorInfo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="344" y="258"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <annotation id="12" language="java" name="hu.exprog.honeyweb.front.annotations.FieldEntitySpecificRightsInfo" 
+    project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/annotations/FieldEntitySpecificRightsInfo.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="575" y="585"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <annotation id="13" language="java" name="hu.exprog.honeyweb.front.annotations.FieldRightsInfo" 
+    project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/annotations/FieldRightsInfo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="827" y="586"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <annotation id="14" language="java" name="hu.exprog.honeyweb.front.annotations.LookupFieldInfo" 
+    project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/annotations/LookupFieldInfo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="828" y="218"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <annotation id="15" language="java" name="hu.exprog.honeyweb.front.annotations.EntityFieldInfo" 
+    project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/front/annotations/EntityFieldInfo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="584" y="232"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <class id="16" language="java" name="hu.exprog.honeyweb.middle.services.BasicService" project="Homework4Telekocsi" 
+    file="/Homework4Telekocsi/src/main/java/hu/exprog/honeyweb/middle/services/BasicService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1985" y="-256"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
