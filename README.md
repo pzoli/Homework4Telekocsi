@@ -213,6 +213,10 @@ If everithing processed well, you can open program in a browser http://localhost
 
 [![Seacon](/Homework4Telekocsi/development/seacon-logo.png?raw=true "https://www.seacon.hu")](https://www.seacon.hu)
 
+## Integrity Ltd.
+
+[![Seacon](/Homework4Telekocsi/development/integrity-logo.png?raw=true "https://integrity.hu")](https://integrity.hu)
+
 ## Versions
 
 ### rev.: 2018.05.10 19:20
