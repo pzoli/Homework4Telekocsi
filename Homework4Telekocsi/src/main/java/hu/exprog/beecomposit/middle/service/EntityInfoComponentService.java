@@ -1,7 +1,6 @@
-package hu.seacon.middle.service;
+package hu.exprog.beecomposit.middle.service;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Logger;
@@ -18,10 +17,6 @@ import org.primefaces.model.SortOrder;
 
 import hu.exprog.beecomposit.back.model.EntityInfoComponent;
 import hu.exprog.honeyweb.middle.services.BasicService;
-import hu.seacon.back.model.Gepjarmu;
-import hu.seacon.back.model.GepjarmuAzonosito;
-import hu.seacon.back.model.GepjarmuMarka;
-import hu.seacon.back.model.GepjarmuTipus;
 
 @Named
 @Stateless

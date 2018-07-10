@@ -15,6 +15,7 @@ import org.apache.deltaspike.core.api.scope.WindowScoped;
 import org.primefaces.extensions.model.dynaform.DynaFormModel;
 
 import hu.exprog.beecomposit.back.model.EntityInfoComponent;
+import hu.exprog.beecomposit.middle.service.EntityInfoComponentService;
 import hu.exprog.honeyweb.front.annotations.EntityFieldInfo;
 import hu.exprog.honeyweb.front.annotations.LookupFieldInfo;
 import hu.exprog.honeyweb.front.exceptions.ActionAccessDeniedException;
@@ -24,7 +25,6 @@ import hu.exprog.honeyweb.utils.ColumnModel;
 import hu.exprog.honeyweb.utils.FieldModel;
 import hu.exprog.honeyweb.utils.LookupFieldModel;
 import hu.exprog.honeyweb.utils.velocity.TemplateTools4HoneyWeb;
-import hu.seacon.middle.service.EntityInfoComponentService;
 
 @Named
 @WindowScoped

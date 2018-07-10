@@ -1,4 +1,4 @@
-package hu.seacon.back.application;
+package hu.exprog.beecomposit.back.application;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;

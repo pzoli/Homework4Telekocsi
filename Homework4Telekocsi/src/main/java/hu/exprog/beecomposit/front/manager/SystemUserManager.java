@@ -26,6 +26,7 @@ import org.primefaces.PrimeFaces;
 import org.primefaces.event.RowEditEvent;
 import org.primefaces.event.SelectEvent;
 
+import hu.exprog.beecomposit.back.application.ApplicationFunctions;
 import hu.exprog.beecomposit.back.model.Language;
 import hu.exprog.beecomposit.back.model.SystemUser;
 import hu.exprog.beecomposit.back.model.Usergroup;
@@ -38,7 +39,6 @@ import hu.exprog.honeyweb.front.manager.BasicManager;
 import hu.exprog.honeyweb.middle.services.BasicService;
 import hu.exprog.honeyweb.utils.FieldModel;
 import hu.exprog.honeyweb.utils.LookupFieldModel;
-import hu.seacon.back.application.ApplicationFunctions;
 
 @Named
 @WindowScoped
