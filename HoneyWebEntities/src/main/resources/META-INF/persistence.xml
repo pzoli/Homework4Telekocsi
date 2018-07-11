@@ -26,6 +26,20 @@
       <!-- The datasource is deployed as WEB-INF/HoneyWebEntities-ds.xml, you
          can find it in the source at src/main/webapp/WEB-INF/HoneyWebEntities-ds.xml -->
       <jta-data-source>java:jboss/datasources/HoneyWebEntitiesDS</jta-data-source>
+      <class>hu.exprog.beecomposit.back.model.SystemUser</class>
+      <class>hu.exprog.beecomposit.back.model.Addresses</class>
+      <class>hu.exprog.beecomposit.back.model.AlertAddresses</class>
+      <class>hu.exprog.beecomposit.back.model.Company</class>
+      <class>hu.exprog.beecomposit.back.model.EmailImapParams</class>
+      <class>hu.exprog.beecomposit.back.model.EmailSmtpParams</class>
+      <class>hu.exprog.beecomposit.back.model.EntityInfoComponent</class>
+      <class>hu.exprog.beecomposit.back.model.Icon</class>
+      <class>hu.exprog.beecomposit.back.model.Language</class>
+      <class>hu.exprog.beecomposit.back.model.Organizationunit</class>
+      <class>hu.exprog.beecomposit.back.model.Usergroup</class>
+      <class>hu.exprog.beecomposit.back.model.UserJoinGroup</class>
+      <class>hu.exprog.beecomposit.back.model.UserJoinGroupId</class>
+      <class>hu.exprog.beecomposit.back.model.UserRegister</class>
       <properties>
          <!-- Properties for Hibernate -->
          <property name="hibernate.hbm2ddl.auto" value="create-drop" />
