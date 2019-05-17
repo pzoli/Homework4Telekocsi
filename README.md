@@ -163,7 +163,7 @@ Shared XMind map: http://www.xmind.net/m/9xYh
 
 ### Import database tables - using pgAdmin or psql in a terminal (please see the Postgres user manuals for decide what you want to do)
 - Create database user (please create user with parameters what you set in Homework4Telekocsi/src/main/webapp/WEB-INF/Homework4Telekocsi-ds.xml)
-- Set rights to you user for full rights to your database. With this wser program will create tables.
+- Set rights to you user for full rights to your database. With this user program will create tables.
 - Create Quartz tables with lunching SQL scripts located at Homework4Telekocsi\src\main\db\quartz_tables_postgres.sql 
 
 
@@ -224,6 +224,6 @@ If everithing processed well, you can open program in a browser http://localhost
 - Code generation not work well because working directory not set everiwhere and template not uploaded to git repository (because Seacon SeaFleet code generation privacy policy). You feel free modify it for use.
 #### Help needed
 - Chat service with OmniFace and Websockets
-- Import exsisting elements into project (like NCF and QRCode handling for ticketing, PDF generation, SMS sending)
+- Import exsisting elements into project (like NFC and QRCode handling for ticketing, PDF generation, SMS sending)
 - Maven archtype generation from HoneyWeb and BeeComposit
 - Jar package generation from HoneyWeb and BeeComposit
