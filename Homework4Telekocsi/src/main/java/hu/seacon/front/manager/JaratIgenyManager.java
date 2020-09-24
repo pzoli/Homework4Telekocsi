@@ -243,7 +243,7 @@ public class JaratIgenyManager extends BasicManager<JaratIgeny> implements Seria
 	}
 
 	public boolean checkStateOfCurrent() {
-		boolean result = current.isPresent() && current.get().getIgenyStatusz() != null && current.get().getIgenyStatusz().getIgenyKod().equals("V");
+		boolean result = current.isPresent() && current.get().getId() != null && current.get().getIgenyStatusz() != null && current.get().getIgenyStatusz().getIgenyKod().equals("V") && !authBackingBean.checkAdminRights();
 		return result;
 	}
 

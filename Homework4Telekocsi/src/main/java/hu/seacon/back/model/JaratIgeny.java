@@ -29,32 +29,36 @@ public class JaratIgeny {
 	@EntityFieldInfo(info="#{msg['jarat']}", weight=1, required=true, editor="select")
 	@LookupFieldInfo(keyField="id",labelField="jaratAzonosito",detailDialogFile="/admin/jarat-dialog", filterField="jarat.jaratAzonosito", sortField="jarat.jaratAzonosito")
 	@FieldRightsInfo(admin="#{authBackingBean.checkAdminRights()}")
+	@FieldEntitySpecificRightsInfo(disabled="#{jaratIgenyManager.checkStateOfCurrent()}")
 	@ManyToOne
 	@JoinColumn(name = "jarat")
 	private Jarat jarat;
 
 	@EntityFieldInfo(info="#{msg['igenybevevo']}", weight=2, required=true, editor="select")
 	@LookupFieldInfo(keyField="id",labelField="userName",detailDialogFile="/admin/users-dialog", filterField="igenybeVevo.userName", sortField="igenybeVevo.userName")
-	@FieldRightsInfo(disabled="#{jaratIgenyController.igenybeVevoDisable}")
+	@FieldRightsInfo(disabled="#{jaratIgenyController.igenybeVevoDisable}", admin="#{authBackingBean.checkAdminRights()}")
+	@FieldEntitySpecificRightsInfo(disabled="#{jaratIgenyManager.checkStateOfCurrent()}")
 	@ManyToOne
 	@JoinColumn(name = "igenybevevo")
 	private SystemUser igenybeVevo;
 
 	@EntityFieldInfo(info="#{msg['igenybejelento']}", weight=2, required=false, editor="select")
 	@LookupFieldInfo(keyField="id",labelField="userName",detailDialogFile="/admin/users-dialog", filterField="igenyBejelento.userName", sortField="igenyBejelent.userName")
-	@FieldRightsInfo(disabled="#{jaratIgenyController.igenybejeletoDisable}")
+	@FieldRightsInfo(disabled="#{jaratIgenyController.igenybejeletoDisable}", admin="#{authBackingBean.checkAdminRights()}")
+	@FieldEntitySpecificRightsInfo(disabled="#{jaratIgenyManager.checkStateOfCurrent()}")
 	@ManyToOne
 	@JoinColumn(name = "igenyBejelento")
 	private SystemUser igenyBejelento;
 
 	@EntityFieldInfo(info="#{msg['igenystatusz']}", weight=3, required=true, editor="select")
 	@LookupFieldInfo(keyField="id",labelField="igenyMegnevezes",detailDialogFile="/admin/igenystatusz-dialog", filterField="igenyStatusz.igenyMegnevezes", sortField="igenyStatusz.igenyMegnevezes")
-	@FieldRightsInfo(admin="#{authBackingBean.checkAdminRights()}")
+	@FieldRightsInfo(admin="#{authBackingBean.checkAdminRights()}",disabled="#{jaratIgenyController.igenybejeletoDisable}")
 	@FieldEntitySpecificRightsInfo(disabled="#{jaratIgenyManager.checkStateOfCurrent()}")
 	@ManyToOne
 	@JoinColumn(name = "igenystatusz")
 	private IgenyStatusz igenyStatusz;
 	
+	@FieldEntitySpecificRightsInfo(disabled="#{jaratIgenyManager.checkStateOfCurrent()}")
 	@EntityFieldInfo(info="#{msg['igenydatuma']}", weight=4, required=true, editor="date", format="yyyy.MM.dd")
 	private Date igenyDatuma;
 	

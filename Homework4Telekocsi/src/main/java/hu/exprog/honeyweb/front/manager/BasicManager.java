@@ -83,6 +83,8 @@ public abstract class BasicManager<T> {
 
 	private Map<String, Object> staticFilters = new HashMap<String, Object>();
 
+	private boolean selectEnabled = true;
+
 	public void initModel() {
 		columns = new ArrayList<ColumnModel>();
 		formModel = new DynaFormModel();
@@ -116,6 +118,13 @@ public abstract class BasicManager<T> {
 			}
 		}
 		return result;
+	}
+
+	private void entitySpecificRightsSetup(Field field, FieldModel model) {
+		if (field.isAnnotationPresent(FieldEntitySpecificRightsInfo.class)) {
+			FieldEntitySpecificRightsInfo fieldEntitySpecificRightsInfo = field.getAnnotation(FieldEntitySpecificRightsInfo.class);
+			model.setFieldEntitySpecificRightsInfo(fieldEntitySpecificRightsInfo);
+		}
 	}
 
 	public void prepareModel(Class<?> clazz, List<ColumnModel> initialColumns, DynaFormModel initialFormModel, Locale currentLocale, QueryInfo queryInfo) {
@@ -183,10 +192,7 @@ public abstract class BasicManager<T> {
 							model = new FieldModel(field.getName(), i18nLabel, conv, entityInfo.format(), entityInfo.required());
 							((FieldModel) model).setRights(queryFieldInfoRights != null ? queryFieldInfoRights : rights);
 						}
-						if (field.isAnnotationPresent(FieldEntitySpecificRightsInfo.class)) {
-							FieldEntitySpecificRightsInfo fieldEntitySpecificRightsInfo = field.getAnnotation(FieldEntitySpecificRightsInfo.class);
-							model.setFieldEntitySpecificRightsInfo(fieldEntitySpecificRightsInfo);
-						}
+						entitySpecificRightsSetup(field, model);
 						if (model != null) {
 							DynaFormLabel label = row.addLabel(i18nLabel);
 							DynaFormControl control = row.addControl(model, entityInfo.editor());
@@ -599,7 +605,6 @@ public abstract class BasicManager<T> {
 		values = new ArrayList<String>();
 		values.add("selectOne");
 		params.put("dialogMode", values);
-
 		PrimeFaces.current().dialog().openDynamic(dialogFile, options, params); // PF6.2-től
 		// RequestContext.getCurrentInstance().openDialog(dialogFile, options,
 		// params); //PF6.1-ig
@@ -675,6 +680,10 @@ public abstract class BasicManager<T> {
 
 	public boolean openedInDialogMode() {
 		return "selectOne".equalsIgnoreCase(dialogMode);
+	}
+
+	public boolean getSelectEnabled() {
+		return selectEnabled;
 	}
 
 	protected abstract Logger getLogger();

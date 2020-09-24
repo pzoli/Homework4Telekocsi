@@ -8,12 +8,12 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:composite="http://java.sun.com/jsf/composite">
 	<p:commandButton action="#{managerBean.save()}"
-		process="@this,dynaForm" ajax="true" value="#{msg['save-button']}"
+		process="@this,dynaForm" ajax="true" value="#{msg['save-button']}" id="saveButton"
 		oncomplete="if (args &amp;&amp; !args.validationFailed) PF('${dialogWidgetVar}').hide();"
 		update=":mainForm:messages,:mainForm:dynaForm,:tableForm:itemsTable" />
-	<p:commandButton type="reset" value="#{msg['reset-button']}"
+	<p:commandButton type="reset" value="#{msg['reset-button']}" id="resetButton"
 		style="margin-left: 5px;" />
 	<p:commandButton process="@this" ajax="true"
-		value="#{msg['cancel-button']}"
+		value="#{msg['cancel-button']}" id="cancelButton"
 		onsuccess="PF('${dialogWidgetVar}').hide();" />
 </ui:composition>

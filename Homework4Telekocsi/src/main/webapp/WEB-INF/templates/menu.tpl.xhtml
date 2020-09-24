@@ -1,3 +1,4 @@
+
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -6,35 +7,35 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:dp="http://infokristaly.hu/dynap">
-	<h:form>
-		<p:accordionPanel>
-			<p:tab title="#{msg['application.title']}">
+	<h:form id="topmenu">
+		<p:accordionPanel id="topaccordion">
+			<p:tab id="toptab" title="#{msg['application.title']}">
 				<p:commandButton styleClass="icon-system"
 					action="/admin/systemsettings.xhtml?faces-redirect=true" value="" rendered="#{authBackingBean.principalRoles.indexOf('ROLE_DEVELOPER') > -1}"
 					title="#{msg['system-setup']}" />
 
 				<p:commandButton styleClass="icon-users" disabled="#{!authBackingBean.checkAdminRights()}"
-					action="/admin/users.xhtml?faces-redirect=true" value=""
+					action="/admin/users.xhtml?faces-redirect=true" value="" id="users"
 					title="#{msg['felhasznalok']}" />
 
 				<p:commandButton styleClass="icon-company" disabled="#{!authBackingBean.checkAdminRights()}"
-					action="/admin/gepjarmuflotta.xhtml?faces-redirect=true" value=""
+					action="/admin/gepjarmuflotta.xhtml?faces-redirect=true" value="" id="flotta"
 					title="#{msg['company-table']}" />
 
 				<p:commandButton styleClass="icon-car" disabled="#{!authBackingBean.checkAdminRights()}"
-					action="/admin/gepjarmuazonosito.xhtml?faces-redirect=true" value=""
+					action="/admin/gepjarmuazonosito.xhtml?faces-redirect=true" value="" id="gepjarmuazon"
 					title="#{msg['gepjarmuazonosito-table']}" />
 
 				<p:commandButton styleClass="icon-jarat" disabled="#{!authBackingBean.checkAdminRights()}"
-					action="/admin/jarat.xhtml?faces-redirect=true" value=""
+					action="/admin/jarat.xhtml?faces-redirect=true" value="" id="jarat"
 					title="#{msg['jarat-table']}" />
 
 				<p:commandButton styleClass="icon-jaratigeny"
-					action="/user/jaratigeny.xhtml?faces-redirect=true" value=""
+					action="/user/jaratigeny.xhtml?faces-redirect=true" value="" id="jaratigeny"
 					title="#{msg['jaratigeny-table']}" />
 					
 				<p:commandButton styleClass="icon-jaratfoglaltsag" disabled="#{!authBackingBean.checkAdminRights()}"
-					action="/admin/jaratfoglaltsag.xhtml?faces-redirect=true" value=""
+					action="/admin/jaratfoglaltsag.xhtml?faces-redirect=true" value="" id="jaratfoglaltsag"
 					title="#{msg['jaratfoglaltsag-table']}" />
 
 				<p:commandButton styleClass="icon-logout" id="exit"

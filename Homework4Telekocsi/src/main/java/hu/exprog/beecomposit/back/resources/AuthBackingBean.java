@@ -98,6 +98,10 @@ public class AuthBackingBean {
 		return result;
 	}
 
+	public boolean isEditorReadOnly() {
+		return !checkDeveloperRights();
+	}
+	
 	public void create(SystemUser user) {
 		user.setEnabled(true);
 		userService.persist(user);

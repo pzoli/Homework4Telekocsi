@@ -45,6 +45,7 @@ public class SystemUser implements java.io.Serializable {
 	@EntityFieldInfo(info = "#{msg['user-group']}", weight = 6, required = true, editor = "select")
 	@LookupFieldInfo(keyField = "id", labelField = "usergroup", detailDialogFile = "/admin/usergroup-dialog", filterField = "usergroup", sortField = "usergroup")
 	@FieldRightsInfo(admin="#{authBackingBean.checkDeveloperRights()}")
+	@FieldEntitySpecificRightsInfo(disabled="#{authBackingBean.isEditorReadOnly()}")
 	private Usergroup usergroup;
 	@EntityFieldInfo(info = "#{msg['password']}", weight = 2, editor = "password", listable = false, postProcess = true)
 	private String osUserPassword;

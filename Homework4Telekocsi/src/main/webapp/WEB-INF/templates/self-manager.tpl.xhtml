@@ -10,8 +10,9 @@
 		<f:event type="preRenderComponent"
 			listener="#{selfManager.setCurrentToLoggedIn()}" />
 	</f:metadata>
+	<div class="viewAlternateTitle"><span style="font-size: 24px;">Saját adatok</span></div>
 	<div class="viewAlternateCommands">
-		<h:form id="actinoForm">
+		<h:form id="actionForm">
 			<p:commandButton value="#{msg['unsubscribe-button']}" update="growl"
 				action="#{selfManager.disableLoggedInUser()}">
 				<p:confirm header="#{msg['confirm-dialogheader']}"

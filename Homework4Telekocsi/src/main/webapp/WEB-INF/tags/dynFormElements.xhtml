@@ -105,10 +105,10 @@
 						itemValue="#{s[data.lookupKeyfield]}" />
 				</p:selectOneMenu>
 				<p:commandButton icon="ui-icon-refresh" id="_selectrefresh"
-					update="_select" rendered="#{!data.rights.disabled}"
+					update="_select" disabled="#{data.rights.disabled}"
 					title="#{msg['refresh-button']}" />
 				<p:commandButton
-					rendered="#{!data.rights.disabled &amp;&amp; data.rights.admin}"
+					disabled="#{data.rights.disabled}"
 					id="#{data.propertyName}_selectnew" title="#{msg['new-button']}"
 					action="#{managerBean.showDialog(data.detailDialogFile)}"
 					process="@this" icon="ui-icon-star">

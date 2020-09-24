@@ -14,6 +14,7 @@ import org.primefaces.extensions.util.visitcallback.VisitTaskExecutor;
 
 import hu.exprog.honeyweb.front.annotations.FieldEntitySpecificRightsInfo;
 import hu.exprog.honeyweb.utils.FieldModel;
+import hu.exprog.honeyweb.utils.FieldRights;
 
 public class FieldRightsInputExecutor implements VisitTaskExecutor {
 
@@ -29,17 +30,31 @@ public class FieldRightsInputExecutor implements VisitTaskExecutor {
 		UIInput input = (UIInput) component;
 		String propertyName = (String) input.getAttributes().get("propertyName");
 		FieldModel fieldModel = fieldModelMap.get(propertyName);
-		FieldEntitySpecificRightsInfo rights = fieldModel.getFieldEntitySpecificRightsInfo();
-		if (rights.disabled() != null) {
-			Boolean disabled = evalELToBoolean(rights.disabled());
-			if (disabled != null && disabled) {
-				component.getAttributes().put("disabled", true);
+		FieldEntitySpecificRightsInfo entityRights = fieldModel.getFieldEntitySpecificRightsInfo();
+		FieldRights fieldRights = fieldModel.getRights();
+		if (fieldRights != null) {
+			if (fieldRights.getDisabled() != null && fieldRights.getAdmin() == null) {
+				Boolean disabled = fieldRights.getDisabled();
+				component.getAttributes().put("disabled", disabled);
+			}
+			if (fieldRights.getReadOnly() != null) {
+				Boolean readOnly = fieldRights.getReadOnly();
+				component.getAttributes().put("readonly", readOnly);
 			}
 		}
-		if (rights.readOnly() != null) {
-			Boolean readonly = evalELToBoolean(rights.readOnly());
-			if (readonly != null && readonly) {
-				component.getAttributes().put("readonly",true);
+
+		if (entityRights != null) {
+			if (entityRights.disabled() != null) {
+				Boolean disabled = evalELToBoolean(entityRights.disabled());
+				if (disabled != null) {
+					component.getAttributes().put("disabled", disabled);
+				}
+			}
+			if (entityRights.readOnly() != null) {
+				Boolean readOnly = evalELToBoolean(entityRights.readOnly());
+				if (readOnly != null) {
+					component.getAttributes().put("readonly", readOnly);
+				}
 			}
 		}
 		return result;
@@ -67,11 +82,10 @@ public class FieldRightsInputExecutor implements VisitTaskExecutor {
 			if (propertyName != null) {
 				FieldModel fieldModel = fieldModelMap.get(propertyName);
 				if (fieldModel != null) {
-					FieldEntitySpecificRightsInfo rights = fieldModel.getFieldEntitySpecificRightsInfo();
-					if (rights != null) {
-						if (input instanceof SelectOneMenu) {
+					FieldRights fieldRights = fieldModel.getRights();
+					FieldEntitySpecificRightsInfo entityRights = fieldModel.getFieldEntitySpecificRightsInfo();
+					if (fieldRights != null || entityRights != null) {
 							result = true;
-						}
 					}
 				}
 			}
