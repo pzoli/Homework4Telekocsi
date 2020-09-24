@@ -113,45 +113,46 @@
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxrs</artifactId>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
 			<version>2.0</version>
+			<scope>compile</scope>
 		</dependency>
 
 
 		<dependency>
 			<groupId>org.wildfly</groupId>
 			<artifactId>wildfly-ejb3</artifactId>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.wildfly</groupId>
 			<artifactId>wildfly-bean-validation</artifactId>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.wildfly</groupId>
 			<artifactId>wildfly-jsf</artifactId>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.wildfly</groupId>
 			<artifactId>wildfly-jpa</artifactId>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.wildfly</groupId>
 			<artifactId>wildfly-servlet-dist</artifactId>
 			<version>${version.jboss.bom}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- Needed for running tests (you may also use TestNG) -->
@@ -213,7 +214,7 @@
 			<groupId>dom4j</groupId>
 			<artifactId>dom4j</artifactId>
 			<version>1.6.1</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
@@ -295,7 +296,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.6.3</version>
+			<version>2.11.2</version>
 			<scope>compile</scope>
 		</dependency>
 
@@ -323,12 +324,12 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
