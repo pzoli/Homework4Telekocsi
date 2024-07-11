@@ -215,7 +215,7 @@ If everithing processed well, you can open program in a browser http://localhost
 
 ## Integrity Ltd.
 
-[![Seacon](/Homework4Telekocsi/development/integrity-logo.png?raw=true "https://integrity.hu")](https://integrity.hu)
+[![Integrity](/Homework4Telekocsi/development/integrity-logo.png?raw=true "https://integrity.hu")](https://integrity.hu)
 
 ## Versions
 
